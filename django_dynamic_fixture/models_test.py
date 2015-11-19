@@ -159,7 +159,7 @@ class ModelWithRelationships(models.Model):
     manytomany_through = models.ManyToManyField('ModelRelated', related_name='m2m_through', through=ModelRelatedThrough)
 
     foreignkey_with_default = models.ForeignKey('ModelRelated', related_name='fk2', null=True, default=default_fk_value)
-    foreignkey_with_id_default = models.ForeignKey('ModelRelated', related_name='fk2', null=True, default=default_fk_id)
+    foreignkey_with_id_default = models.ForeignKey('ModelRelated', related_name='fk3', null=True, default=default_fk_id)
 
     integer = models.IntegerField(null=True)
     integer_b = models.IntegerField(null=True)
