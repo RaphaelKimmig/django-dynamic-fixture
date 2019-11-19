@@ -12,8 +12,10 @@ from django_dynamic_fixture.fixture_algorithms.sequential_fixture import Sequent
 from django_dynamic_fixture.global_settings import DDF_DEFAULT_DATA_FIXTURE, DDF_FILL_NULLABLE_FIELDS, DDF_NUMBER_OF_LAPS, \
                                                     DDF_IGNORE_FIELDS, DDF_VALIDATE_MODELS, DDF_VALIDATE_ARGS, DDF_USE_LIBRARY, \
                                                     DDF_DEBUG_MODE, DDF_FIELD_FIXTURES
+from typing import List, Type, TypeVar, Union
 
 
+T = TypeVar("T")
 LOOKUP_SEP = '__'
 
 def look_up_alias(**kwargs):
@@ -53,7 +55,7 @@ def fixture(**kwargs):
 
 
 # Wrappers
-def new(model, shelve=False, n=1, persist_dependencies=True, **kwargs):
+def new(model: Type[T], shelve=False, n=1, persist_dependencies=True, **kwargs) -> Union[T, List[T]]:
     """
     Return one or many valid instances of Django Models with fields filled with auto generated or customized data.
     All instances will NOT be persisted in the database, except its dependencies, in case @persist_dependencies is True.
@@ -82,7 +84,7 @@ def new(model, shelve=False, n=1, persist_dependencies=True, **kwargs):
     return instances
 
 
-def get(model, shelve=False, n=1, **kwargs):
+def get(model: Type[T], shelve=False, n=1, **kwargs) -> Union[T, List[T]]:
     """
     Return one or many valid instances of Django Models with fields filled with auto generated or customized data.
     All instances will be persisted in the database.
