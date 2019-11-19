@@ -14,7 +14,7 @@ from setuptools import setup, find_packages
 # Update version and save
 # Go to 'files' link and upload the file
 
-VERSION = '1.8.4'
+VERSION = '2.0.0'
 
 tests_require = [
     'nose>=1.3.6',
@@ -43,9 +43,10 @@ setup(name='django-dynamic-fixture',
           'Framework :: Django',
           'Operating System :: OS Independent',
           'Topic :: Software Development',
-          'Programming Language :: Python :: 2.7',
-          'Programming Language :: Python :: 3.3',
-          'Programming Language :: Python :: 3.4',
+          'Programming Language :: Python :: 3.5',
+          'Programming Language :: Python :: 3.6',
+          'Programming Language :: Python :: 3.7',
+          'Programming Language :: Python :: 3.8',
           'Programming Language :: Python :: Implementation :: PyPy',
       ],
 
